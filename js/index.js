@@ -6,23 +6,15 @@
 
     var document = context.document,
         WIDTH = context.innerWidth,
-        HEIGHT = context.innerHeight;
+        HEIGHT = context.innerHeight,
+
+        ANIMATION_END_EVENT = "oanimationend animationend webkitAnimationEnd";
 
     var currentIndex = 0;
-    var ANIM_DURATION = 500;
-
     var initPage = function (config) {
         var self = $('#page-' + config.index);
 
         self.config = config || {};
-        self.css({
-            'background-color': config['background-color'] || '',
-            'display': config['index'] == currentIndex ? 'block' : 'none',
-            'position': 'absolute',
-            'top': HEIGHT * config.index,
-            'left': 0
-        });
-
         return self;
     }
 
@@ -32,24 +24,16 @@
 
         container.css({
             width: WIDTH,
-            height: HEIGHT,
-            position: 'relative'
+            height: HEIGHT
         });
 
-        initPage({
-            'background-color': 'red',
-            'index': 0
-        });
+        for (var i = 0; i < 3; ++i) {
+            initPage({
+                'index': i
+            });
+        }
 
-        initPage({
-            'background-color': 'blue',
-            'index': 1
-        });
-
-        initPage({
-            'background-color': 'green',
-            'index': 2
-        });
+        $('#page-' + currentIndex).addClass('current');
 
         window.pageUp = function () {
             if (currentIndex >= pageLengh - 1) {
@@ -59,41 +43,17 @@
             var currentPage = $('#page-' + currentIndex);
             var nextPage = $('#page-' + (currentIndex + 1));
 
-            currentPage.animate(
-                {
-                    opacity: 0
-                },
-                {
-                    duration: ANIM_DURATION,
-                    done: function () {
-                        currentPage.css({
-                            display: 'none'
-                        });
-                    }
-                });
-
-            nextPage.css({
-                'z-index': 999,
-                top: HEIGHT,
-                opacity: 1,
-                display: "block"
+            currentPage.addClass('pt-page-scaleOutUp');
+            currentPage.bind(ANIMATION_END_EVENT, function () {
+                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.unbind(ANIMATION_END_EVENT);
             });
-            nextPage.animate(
-                {
-                    top: 0
-                },
 
-                {
-                    duration: ANIM_DURATION,
-                    start: function () {
-                        //nextPage.css({
-                        //    'z-index': 999,
-                        //    top: HEIGHT,
-                        //    opacity: 1,
-                        //    display: "block"
-                        //});
-                    }
-                });
+            nextPage.addClass('current pt-page-moveInDown');
+            nextPage.bind(ANIMATION_END_EVENT, function () {
+                nextPage.removeClass('pt-page-moveInDown');
+                nextPage.unbind(ANIMATION_END_EVENT);
+            });
 
             currentIndex++;
         }
@@ -106,40 +66,18 @@
             var currentPage = $('#page-' + currentIndex);
             var prevPage = $('#page-' + (currentIndex - 1));
 
-            currentPage.animate(
-                {
-                    opacity: 0
-                },
-                {
-                    duration: ANIM_DURATION,
-                    done: function () {
-                        currentPage.css({
-                            display: 'none'
-                        });
-                    }
-                });
-
-            prevPage.css({
-                'z-index': 999,
-                top: -HEIGHT,
-                opacity: 1,
-                display: "block"
+            currentPage.addClass('pt-page-scaleOutUp');
+            currentPage.bind(ANIMATION_END_EVENT, function () {
+                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.unbind(ANIMATION_END_EVENT);
             });
-            prevPage.animate(
-                {
-                    top: 0
-                },
-                {
-                    duration: ANIM_DURATION,
-                    start: function () {
-                        //prevPage.css({
-                        //    'z-index': 999,
-                        //    top: -HEIGHT,
-                        //    opacity: 1,
-                        //    display: "block"
-                        //});
-                    }
-                });
+
+            prevPage.addClass('current pt-page-moveInUp');
+            prevPage.bind(ANIMATION_END_EVENT, function () {
+                prevPage.removeClass('pt-page-moveInUp');
+                prevPage.unbind(ANIMATION_END_EVENT);
+            });
+
 
             currentIndex--;
         }
