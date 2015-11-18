@@ -2,7 +2,7 @@
  * Created by qiumei on 2015/11/16.
  */
 (function () {
-    var supportTouch = true;//$.support.touch,
+    var supportTouch = false;//$.support.touch,
     scrollEvent = "touchmove scroll",
         touchStartEvent = supportTouch ? "touchstart" : "mousedown",
         touchStopEvent = supportTouch ? "touchend" : "mouseup",

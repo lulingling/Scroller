@@ -22,7 +22,7 @@
 
         self.config = config || {};
 
-        // compute logo's location
+        // compute logo's location:logoCount图片的个数，logo图片的ID
         var logoCount = self.config[CONFIG_LOCATION].length / 3, i, logo;
         var rawRatio, wRatio, topRatio;
         for (i = 0; i < logoCount; i++) {
@@ -54,23 +54,23 @@
         var configs = [
             {
                 index: 0,
-                location: [1.08, 0.36, 0.18, 10.372, 0.73, 0.52]
+                location: [1.0865, 0.3531, 0.1708, 10.372, 0.73, 0.4560]
             },
             {
                 index: 1,
-                location: []
+                location: [2.8095,0.8297,0.0456,5.36,0.6281,0.2403]
             },
             {
                 index: 2,
-                location: []
+                location: [7.6522,0.825,0.1127,5.3467,0.6265625,0.2438]
             },
             {
                 index: 3,
-                location: []
+                location: [8.6087,0.61875,0.0920,6.9327,0.80156,0.2349]
             },
             {
                 index: 4,
-                location: []
+                location: [4.7297,0.546875,0.7384]
             }
         ];
 
