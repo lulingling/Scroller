@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <!--<meta name="viewport" content="width=device-width,user-scalable=no"/>-->
     <title>Scroller</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
@@ -11,30 +11,26 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery-gesture.js"></script>
 </head>
-<style type="text/css">
-    #page-0 {
-        background: url("images/page0-bg.png") no-repeat center center;
-        -webkit-background-size: 100%;
-        background-size: 100%;
+<style>
+    img {
+        display: block;
+        margin: 0 auto;
+        position: absolute;
     }
 
-    #page-1 {
-        background: url("images/page1-bg.png") no-repeat center center;
-        -webkit-background-size: 100%;
-        background-size: 100%;
-    }
-
-    #page-2 {
-        background: url("images/page2-bg.png") no-repeat center center;
-        -webkit-background-size: 100%;
-        background-size: 100%;
-    }
+    /*#page-0-logo0 {*/
+        /*-webkit-animation: zoomIn 1s ease 0.8s 1 both;*/
+        /*-moz-animation: zoomIn 1s ease 0.8s 1 both;*/
+        /*animation: zoomIn 1s ease 0.8s 1 both;*/
+    /*}*/
 </style>
-<body>
 
+<body>
 <div id="container">
     <div id="page-0" class="page">
         <h1>Page 0</h1>
+        <img id="page-0-logo0" src="images/page0-logo1.png" class="pt-page-fadeInUp">
+        <img id="page-0-logo1" src="images/page0-logo2.png">
     </div>
 
     <div id="page-1" class="page">
@@ -44,7 +40,14 @@
     <div id="page-2" class="page">
         <h1>Page 2</h1>
     </div>
-</div>
 
+    <div id="page-3" class="page">
+        <h1>Page 3</h1>
+    </div>
+
+    <div id="page-4" class="page">
+        <h1>Page 4</h1>
+    </div>
+</div>
 </body>
 </html>

@@ -2,7 +2,7 @@ body {
     overflow: hidden;
 }
 
-＃container {
+.container {
     position: relative;
 }
 
@@ -15,6 +15,41 @@ body {
     left: 0;
 }
 
+.top {
+    z-index: 999;
+}
+
 .current {
     display: block;
+}
+
+#page-0 {
+    background: url("../images/page0-bg.png") no-repeat center center;
+    /*������background-size:100%��background-size:coverЧ����һ���*/
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+#page-1 {
+    background: url("../images/page1-bg.png") no-repeat center center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+#page-2 {
+    background: url("../images/page2-bg.png") no-repeat center center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+#page-3 {
+    background: url("../images/page3-bg.png") no-repeat center center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+#page-4 {
+    background: url("../images/page4-bg.png") no-repeat center center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
 }
