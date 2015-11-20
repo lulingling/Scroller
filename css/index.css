@@ -23,6 +23,17 @@ body {
     display: block;
 }
 
+/*up arrow*/
+/*.current::after {*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*background: url("../img/arrow.png") no-repeat;*/
+    /*width: 5.78125%;*/
+    /*height: 1.76056%;*/
+    /*bottom: 5.88%;*/
+    /*left: 47.109375%;*/
+/*}*/
+
 #page-0 {
     background: url("../images/page0-bg.png") no-repeat center center;
     /*������background-size:100%��background-size:coverЧ����һ���*/
@@ -66,9 +77,37 @@ button {
     color: #ba788a;
     border-radius: 6px;
     border: 1px solid #ba788a;
-    font-size: 1.8em;;
+    font-size: 1.7em;;
     -webkit-box-shadow: gray 0 0 10px;
     box-shadow: gray 0 0 10px;
     opacity: 1;
     font-family: sans-serif;
+}
+
+.slide-progress{
+    position: absolute;
+    z-index: 10000;
+    margin-top: 50%;
+    width: .5em;
+    right: .25em;
+    overflow: hidden;
+}
+
+.progress-dot{
+    list-style: none;
+    padding: 0;
+    background-color: #f9f9f9;
+    width: .3em;
+    height: .3em;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    opacity: .3;
+    margin: 0 auto .3em;
+}
+
+.progress-dot.dot_current{
+    opacity: .7;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
 }
