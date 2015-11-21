@@ -1,6 +1,4 @@
-/**
- * Created by qiumei on 2015/11/16.
- */
+
 (function () {
     var supportTouch = false;//$.support.touch,
     scrollEvent = "touchmove scroll",

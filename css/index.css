@@ -87,9 +87,9 @@ button {
 .slide-progress{
     position: absolute;
     z-index: 10000;
-    margin-top: 50%;
-    width: .5em;
-    right: .25em;
+    top: 50%;
+    width: 1em;
+    right: .5em;
     overflow: hidden;
 }
 
@@ -97,16 +97,16 @@ button {
     list-style: none;
     padding: 0;
     background-color: #f9f9f9;
-    width: .3em;
-    height: .3em;
-    -webkit-border-radius: .3em;
-    -moz-border-radius: .3em;
-    border-radius: .3em;
+    width: .7em;
+    height: .7em;
+    -webkit-border-radius: .7em;
+    -moz-border-radius: .7em;
+    border-radius: .7em;
     opacity: .3;
-    margin: 0 auto .3em;
+    margin: 0 auto .5em;
 }
 
-.progress-dot.dot_current{
+.progress-dot.dot-current{
     opacity: .7;
     background-color: transparent;
     border: 1px solid #FFFFFF;

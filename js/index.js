@@ -51,23 +51,41 @@
         var configs = [
             {
                 index: 0,
-                location: [1.0865, 0.3531, 0.1708, 10.372, 0.73, 0.4560, 1.85, 0.0578125, 0.9412]
+                location: [
+                    1.0865, 0.3531, 0.1708,
+                    10.372, 0.73, 0.4560,
+                    1.85, 0.0578125, 0.9412
+                ]
             },
             {
                 index: 1,
-                location: [2.8095, 0.8297, 0.0456, 5.36, 0.6281, 0.2403, 1.85, 0.0578125, 0.9412]
+                location: [
+                    2.8095, 0.8297, 0.0456,
+                    5.36, 0.6281, 0.2403,
+                    1.85, 0.0578125, 0.9412
+                ]
             },
             {
                 index: 2,
-                location: [7.6522, 0.825, 0.1127, 5.3467, 0.6265625, 0.2438, 1.85, 0.0578125, 0.9412]
+                location: [
+                    7.6522, 0.825, 0.1127,
+                    5.3467, 0.6265625, 0.2438,
+                    1.85, 0.0578125, 0.9412
+                ]
             },
             {
                 index: 3,
-                location: [8.6087, 0.61875, 0.0920, 6.9327, 0.80156, 0.2349, 1.85, 0.0578125, 0.9412]
+                location: [
+                    8.6087, 0.61875, 0.0920,
+                    6.9327, 0.80156, 0.2349,
+                    1.85, 0.0578125, 0.9412
+                ]
             },
             {
                 index: 4,
-                location: [4.7297, 0.546875, 0.7465]
+                location: [
+                    4.7297, 0.546875, 0.7465
+                ]
             }
         ];
 
@@ -102,6 +120,8 @@
 
             currentIndex++;
 
+            $("li:nth-child(" +(currentIndex+1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
+
         }
 
         window.pageDown = function () {
@@ -127,11 +147,11 @@
                 isAnimating = false;
             });
 
-
             currentIndex--;
+
+            $("li:nth-child(" + (currentIndex+1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
         }
 
-        //$("li:nth-child(currentIndex)").addClass("dot_current").siblings().removeClass("dot_current");
 
         container.on('swipeup', pageUp);
         container.on('swipedown', pageDown);
