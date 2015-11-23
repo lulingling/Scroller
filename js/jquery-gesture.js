@@ -1,4 +1,3 @@
-
 (function () {
     var supportTouch = false;//$.support.touch,
     scrollEvent = "touchmove scroll",
@@ -27,15 +26,16 @@
                     var data = event.originalEvent.touches ?
                         event.originalEvent.touches[0] :
                         event;
+
                     stop = {
                         time: (new Date).getTime(),
                         coords: [data.pageX, data.pageY]
                     };
 
                     // prevent scrolling
-                    if (Math.abs(start.coords[1] - stop.coords[1]) > 10) {
-                        event.preventDefault();
-                    }
+                    //if (Math.abs(start.coords[1] - stop.coords[1]) > 10) {
+                    event.preventDefault();
+                    //}
                 }
 
                 $this

@@ -106,21 +106,21 @@
             isAnimating = true;
             currentPage.addClass('pt-page-scaleOutUp');
             currentPage.removeClass('top');
-            currentPage.bind(ANIMATION_END_EVENT, function () {
-                currentPage.removeClass('current pt-page-scaleOutUp');
-                currentPage.unbind(ANIMATION_END_EVENT);
-            });
 
             nextPage.addClass('current pt-page-moveInDown top');
             nextPage.bind(ANIMATION_END_EVENT, function () {
                 nextPage.removeClass('pt-page-moveInDown');
                 nextPage.unbind(ANIMATION_END_EVENT);
+
+                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.unbind(ANIMATION_END_EVENT);
+
                 isAnimating = false;
             });
 
             currentIndex++;
 
-            $("li:nth-child(" +(currentIndex+1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
+            $("li:nth-child(" + (currentIndex + 1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
 
         }
 
@@ -135,26 +135,107 @@
             isAnimating = true;
             currentPage.addClass('pt-page-scaleOutUp');
             currentPage.removeClass('top');
-            currentPage.bind(ANIMATION_END_EVENT, function () {
-                currentPage.removeClass('current pt-page-scaleOutUp');
-                currentPage.unbind(ANIMATION_END_EVENT);
-            });
 
             prevPage.addClass('current pt-page-moveInUp top');
             prevPage.bind(ANIMATION_END_EVENT, function () {
                 prevPage.removeClass('pt-page-moveInUp');
                 prevPage.unbind(ANIMATION_END_EVENT);
+
+                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.unbind(ANIMATION_END_EVENT);
+
                 isAnimating = false;
             });
 
             currentIndex--;
 
-            $("li:nth-child(" + (currentIndex+1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
+            $("li:nth-child(" + (currentIndex + 1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
         }
 
 
         container.on('swipeup', pageUp);
         container.on('swipedown', pageDown);
+
+        //
+        //var event_tracker = {
+        //    pressed: false,
+        //    stamps: [0, 0, 0],        // [start, last, now]
+        //    position: [0, 0, 0]      // [startY, lastY, currentY]
+        //};
+        //
+        //var debug_console = $('#debug_console');
+        //
+        //var event_log = function (event) {
+        //    var data = event.originalEvent.touches ?
+        //        event.originalEvent.touches[0] :
+        //        event;
+        //
+        //    switch (event.type) {
+        //        case "mousedown":
+        //        case "touchstart":
+        //            event_tracker.pressed = true;
+        //            event_tracker.position[0] = data.pageY;
+        //            event_tracker.stamps[0] = data.timeStamp;
+        //            break;
+        //        case "mousemove":
+        //        case "touchmove":
+        //            break;
+        //        case "mouseup":
+        //        case "touchend":
+        //            event_tracker.pressed = false;
+        //            break;
+        //    }
+        //
+        //    if (data) {
+        //        event_tracker.position[1] = event_tracker.position[2];
+        //        event_tracker.position[2] = data.pageY;
+        //        event_tracker.stamps[1] = event_tracker.stamps[2];
+        //        event_tracker.stamps[2] = data.timeStamp;
+        //    }
+        //
+        //    debug_console.text(event_tracker.position[0] + ", " + event_tracker.position[1] + ", " + event_tracker.position[2]);
+        //};
+        //
+        //var events_handle = {
+        //    on_down: function (event) {
+        //        event_log(event);
+        //    },
+        //
+        //    on_move: function (event) {
+        //        if (!event_tracker.pressed) {
+        //            return;
+        //        }
+        //
+        //        event_log(event);
+        //        event.preventDefault();
+        //    },
+        //
+        //    on_up: function (event) {
+        //        if (!event_tracker.pressed) {
+        //            return;
+        //        }
+        //
+        //        event_log(event);
+        //
+        //        var dY = event_tracker.position[2] - event_tracker.position[0];
+        //        if (dY > 100) {
+        //            pageDown();
+        //        }
+        //
+        //        if (dY < -100) {
+        //            pageUp();
+        //        }
+        //    }
+        //
+        //};
+        //
+        //container.bind("mousedown", events_handle.on_down);
+        //container.bind("mousemove", events_handle.on_move);
+        //container.bind("mouseup", events_handle.on_up);
+        //
+        //container.bind("touchstart", events_handle.on_down);
+        //container.bind("touchmove", events_handle.on_move);
+        //container.bind("touchend", events_handle.on_up);
     };
 
     $(document).ready(onReady);
