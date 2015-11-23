@@ -32,7 +32,7 @@
                 width: wRatio * 100 + '%',
                 height: WIDTH / HEIGHT * wRatio / rawRatio * 100 + '%',
                 top: topRatio * 100 + '%',
-                left: leftRatio < 0 ? (1 - wRatio) / 2 * 100 + '%' : leftRatio*100+"%"
+                left: leftRatio < -100 ? (1 - wRatio) / 2 * 100 + '%' : leftRatio * 100 + "%"
             });
         }
 
@@ -52,51 +52,67 @@
             {
                 index: 0,
                 location: [
-                    1.0455, 0.2875, 0.220951, -1,
-                    3.14474, 0.3734375, 0.42077, -1,
-                    4.12903, 1, 0.485915, -1,
-                    10.5, 0.7875, 0.65757, -1,
-                    1.85, 0.0578125, 0.9412, -1
+                    1.0455, 0.2875, 0.220951, -999,
+                    3.14474, 0.3734375, 0.42077, -999,
+                    4.12903, 1, 0.485915, -999,
+                    10.5, 0.7875, 0.65757, -999,
+                    1.85, 0.0578125, 0.9412, -999
                 ]
             },
             {
                 index: 1,
                 location: [
-                    6.51316, 0.7734375, 0.266725, -1,
+                    6.51316, 0.7734375, 0.266725, -999,
                     2.661417, 0.528125, 0.366197, 0,
                     0.55526, 0.321875, 0.510563, 0.546875,
-                    0,0,0,0,
-                    //0.56962,0.2109375,0.471831,-0.075,//left为负值
-                    0.625616,0.1984375,0.5017606,0.3578125,
-                    0.8448276,0.30625,0.46831,0.09375,
-                    0,0,0,0,
-                    //0.549107,0.1921875,0.55986,-0.059375,//left为负值
-                    0.54911,0.1921875,0.56074,0.2015625
+                    0.56962, 0.2109375, 0.471831, -0.075,//left为负值
+                    0.625616, 0.1984375, 0.5017606, 0.3578125,
+                    0.8448276, 0.30625, 0.46831, 0.09375,
+                    0.549107, 0.1921875, 0.55986, -0.059375,//left为负值
+                    0.54911, 0.1921875, 0.56074, 0.2015625,
+                    2.649351,0.31875,0.397007,-999,
+                    1.85, 0.0578125, 0.9412, -999
 
                 ]
             },
             {
                 index: 2,
-                location: []
+                location: [
+                    5.710526,0.68125,0.264965,-999,
+                    0.873563,0.2375,0.368838,0.1296875,
+                    0.7574257,0.2390625,0.387324,-999,
+                    0.794444,0.2234375,0.40581,0.603125,
+                    0.563981,0.1859375,0.471831,0.0953125,
+                    0.509709,0.1640625,0.475352,0.753125,
+                    0.638298,0.375,0.458627,-999,
+                    1.85, 0.0578125, 0.9412, -999
+
+                ]
             },
             {
                 index: 3,
                 location: [
-                    6.98684,0.8296875,0.26408,-1,
-                    0.59864,0.1375,0.393486,0.384735,
-                    1.39,0.2171875,0.5044014,0,
-                    1.41176,0.3,0.368838,0.146875,
-                    1.3902424,0.178125,0.367958,0.6046875,
-                    1.34127,0.528125,0.4832746,0.4734375,
-                    0.55443,0.3421875,0.632923,0.1359375
+                    6.98684, 0.8296875, 0.2649648, -999,
+                    1.39, 0.2171875, 0.5070423, 0,
+                    1.411765, 0.3, 0.368838, 0.14375,
+                    1.390244, 0.178125, 0.368838, 0.60625,
+                    0.598639, 0.1375, 0.394366, 0.3828125,
+                    //page-3-logo5-old
+                    //1.3412698, 0.528125, 0.4850352, 0.4734375,
+                    1.338384, 0.4140625, 0.4850352, 0.4734375,
+                    //page-3-logo6-old
+                    //0.5544304, 0.3421875, 0.6338028, 0.1390625,
+                    0.55685,0.2984375,0.6047535,0.1390625,
+                    1.85, 0.0578125, 0.9412, -999
+
                 ]
             },
             {
                 index: 4,
                 location: [
-                    1.014308, 0.996875, 0.161972, -1,
-                    0.72405, 0.446875, 0.27641, -1,
-                    4.14516, 0.4015625, 0.8169, -1
+                    1.014308, 0.996875, 0.161972, -999,
+                    0.72405, 0.446875, 0.27641, -999,
+                    4.14516, 0.4015625, 0.8169, -999
                 ]
             }
         ];
@@ -118,15 +134,16 @@
             isAnimating = true;
             currentPage.addClass('pt-page-scaleOutUp');
             currentPage.removeClass('top');
-            currentPage.bind(ANIMATION_END_EVENT, function () {
-                currentPage.removeClass('current pt-page-scaleOutUp');
-                currentPage.unbind(ANIMATION_END_EVENT);
-            });
+
 
             nextPage.addClass('current pt-page-moveInDown top');
             nextPage.bind(ANIMATION_END_EVENT, function () {
                 nextPage.removeClass('pt-page-moveInDown');
                 nextPage.unbind(ANIMATION_END_EVENT);
+
+                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.unbind(ANIMATION_END_EVENT);
+
                 isAnimating = false;
             });
 
@@ -146,15 +163,16 @@
             isAnimating = true;
             currentPage.addClass('pt-page-scaleOutUp');
             currentPage.removeClass('top');
-            currentPage.bind(ANIMATION_END_EVENT, function () {
-                currentPage.removeClass('current pt-page-scaleOutUp');
-                currentPage.unbind(ANIMATION_END_EVENT);
-            });
+
 
             prevPage.addClass('current pt-page-moveInUp top');
             prevPage.bind(ANIMATION_END_EVENT, function () {
                 prevPage.removeClass('pt-page-moveInUp');
                 prevPage.unbind(ANIMATION_END_EVENT);
+
+                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.unbind(ANIMATION_END_EVENT);
+
                 isAnimating = false;
             });
 
