@@ -23,17 +23,6 @@ body {
     display: block;
 }
 
-/*up arrow*/
-/*.current::after {*/
-/*content: '';*/
-/*position: absolute;*/
-/*background: url("../img/arrow.png") no-repeat;*/
-/*width: 5.78125%;*/
-/*height: 1.76056%;*/
-/*bottom: 5.88%;*/
-/*left: 47.109375%;*/
-/*}*/
-
 #page-0 {
     background: url("../img/page0-bg.png") no-repeat center center;
     /*??????background-size:100%??background-size:cover§¹????????*/
@@ -136,9 +125,9 @@ button {
 }
 
 .zoomInScaleOutFast {
-    -webkit-animation: logo-zoomInScaleOutfast .2s ease 0.8s 1 both;
-    -o-animation: logo-zoomInScaleOutfast .2s ease 0.8s 1 both;
-    animation: logo-zoomInScaleOutfast .2s ease 0.8s 1 both;
+    -webkit-animation: logo-zoomInScaleOutfast .5s ease 0.8s 1 both;
+    -o-animation: logo-zoomInScaleOutfast .5s ease 0.8s 1 both;
+    animation: logo-zoomInScaleOutfast .5s ease 0.8s 1 both;
 }
 
 @keyframes logo-zoomInScaleOutfast {
@@ -166,8 +155,8 @@ button {
 }
 
 .fadeInDownFast {
-    -webkit-animation: logo-fadeInDownFast .2s ease .8s 1 both;
-    animation: logo-fadeInDownFast .2s ease .8s 1 both
+    -webkit-animation: logo-fadeInDownFast .5s ease .8s 1 both;
+    animation: logo-fadeInDownFast .5s ease .8s 1 both
 }
 
 @-webkit-keyframes logo-fadeInDownFast {
@@ -213,9 +202,9 @@ button {
 }
 
 .fadeInRightFast {
-    -webkit-animation: logo-fadeInRightFast .2s ease .8s 1 both;
-    -o-animation: logo-fadeInRightFast .2s ease .8s 1 both;
-    animation: logo-fadeInRightFast .2s ease .8s 1 both;
+    -webkit-animation: logo-fadeInRightFast .5s ease .8s 1 both;
+    -o-animation: logo-fadeInRightFast .5s ease .8s 1 both;
+    animation: logo-fadeInRightFast .5s ease .8s 1 both;
 }
 
 @keyframes logo-fadeInRightFast {
