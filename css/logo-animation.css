@@ -269,9 +269,9 @@
 }
 
 .bounceInUp{
-    -webkit-animation: logo-bounceInUp 1s ease .8s 1 both;
-    -o-animation: logo-bounceInUp 1s ease .8s 1 both;
-    animation: logo-bounceInUp 1s ease .8s 1 both;
+    -webkit-animation: logo-bounceInUp 1s ease-in-out 1.3s 1 both;
+    -o-animation: logo-bounceInUp 1s ease-in-out 1.3s 1 both;
+    animation: logo-bounceInUp 1s ease-in-out 1.3s 1 both;
 }
 
 .bounceInUp_page1_logo0{

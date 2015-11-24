@@ -98,9 +98,9 @@ button {
 .slide-progress {
     position: absolute;
     z-index: 10000;
-    top: 50%;
-    width: 1em;
-    right: .5em;
+    top: 49%;
+    width: 0.7em;
+    right: .4em;
     overflow: hidden;
 }
 
@@ -108,13 +108,13 @@ button {
     list-style: none;
     padding: 0;
     background-color: #f9f9f9;
-    width: .7em;
-    height: .7em;
-    -webkit-border-radius: .7em;
-    -moz-border-radius: .7em;
-    border-radius: .7em;
+    width: .5em;
+    height: .5em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
     opacity: .3;
-    margin: 0 auto .5em;
+    margin: 0 auto .3em;
 }
 
 .progress-dot.dot-current {
