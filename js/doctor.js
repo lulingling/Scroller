@@ -6,6 +6,10 @@
 
         ANIMATION_END_EVENT = "oanimationend animationend webkitAnimationEnd";
 
+    if (WIDTH > HEIGHT) {
+        WIDTH = HEIGHT * 320 / 480;
+    }
+
     var CONFIG_INDEX = 'index',
         CONFIG_LOCATION = 'location';
 
@@ -15,6 +19,12 @@
     var initPage = function (config) {
         var pageId = '#page-' + config[CONFIG_INDEX];
         var self = $(pageId);
+
+        self.css({
+            width: WIDTH,
+            height: HEIGHT,
+            margin: "0 auto"
+        });
 
         self.config = config || {};
 
@@ -49,7 +59,8 @@
 
         container.css({
             width: WIDTH,
-            height: HEIGHT
+            height: HEIGHT,
+            margin: "0 auto"
         });
 
         var configs = [
