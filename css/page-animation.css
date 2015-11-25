@@ -278,26 +278,26 @@
     -webkit-transform-origin: center center;
     -ms-transform-origin: center center;
     transform-origin: center center;
-    -webkit-animation: page-scale .8s ease both;
-    animation: page-scale .8s ease both
+    -webkit-animation: page-scale .8s ease 0.1s both;
+    animation: page-scale .8s ease 0.1s both
 }
 
 .pt-page-scaleInUp {
-    -webkit-animation: page-moveInUp .8s ease both;
-    animation: page-moveInUp .8s ease both
+    -webkit-animation: page-moveInUp .8s ease 0.1s both;
+    animation: page-moveInUp .8s ease 0.1s both
 }
 
 .pt-page-scaleOutDown {
     -webkit-transform-origin: center center;
     -ms-transform-origin: center center;
     transform-origin: center center;
-    -webkit-animation: page-scale .8s ease both;
-    animation: page-scale .8s ease both
+    -webkit-animation: page-scale .8s ease 0.1s both;
+    animation: page-scale .8s ease 0.1s both
 }
 
 .pt-page-scaleInDown {
-    -webkit-animation: page-moveInDown .8s ease both;
-    animation: page-moveInDown .8s ease both
+    -webkit-animation: page-moveInDown .8s ease 0.1s both;
+    animation: page-moveInDown .8s ease 0.1s both
 }
 
 @-webkit-keyframes page-scale {
