@@ -44,8 +44,8 @@
                         $this.unbind(touchMoveEvent, moveHandler);
                         if (start && stop) {
                             if (stop.time - start.time < 1000 &&
-                                Math.abs(start.coords[1] - stop.coords[1]) > 30 &&
-                                Math.abs(start.coords[0] - stop.coords[0]) < 75) {
+                                Math.abs(start.coords[1] - stop.coords[1]) > 20 &&
+                                Math.abs(start.coords[0] - stop.coords[0]) < 60) {
                                 start.origin
                                     .trigger("swipeupdown")
                                     .trigger(start.coords[1] > stop.coords[1] ? "swipeup" : "swipedown");
