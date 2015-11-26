@@ -1,5 +1,5 @@
 (function () {
-    var supportTouch = false;//$.support.touch,
+    var supportTouch = true;//$.support.touch,
     scrollEvent = "touchmove scroll",
         touchStartEvent = supportTouch ? "touchstart" : "mousedown",
         touchStopEvent = supportTouch ? "touchend" : "mouseup",

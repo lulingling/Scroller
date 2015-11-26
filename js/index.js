@@ -6,6 +6,10 @@
 
         ANIMATION_END_EVENT = "oanimationend animationend webkitAnimationEnd";
 
+    if (WIDTH > HEIGHT) {
+        WIDTH = HEIGHT * 320 / 480;
+    }
+
     var CONFIG_INDEX = 'index',
         CONFIG_LOCATION = 'location';
 
@@ -17,6 +21,12 @@
         var self = $(pageId);
 
         self.config = config || {};
+
+        self.css({
+            width: WIDTH,
+            height: HEIGHT,
+            margin: "0 auto"
+        });
 
         // compute logo's location:logoCount图片的个数，logo图片的ID
         var logoCount = self.config[CONFIG_LOCATION].length / 3, i, logo;
@@ -40,11 +50,12 @@
 
     var onReady = function () {
         var container = $("#container");
-        var pageLengh = $('.page').length;
+        var pageLength = $('.page').length;
 
         container.css({
             width: WIDTH,
-            height: HEIGHT
+            height: HEIGHT,
+            margin: "0 auto"
         });
 
         //location每三个数字为一个logo的rawRatio , w
@@ -96,7 +107,7 @@
         $('#page-' + currentIndex).addClass('current');
 
         window.pageUp = function () {
-            if (currentIndex >= pageLengh - 1 || isAnimating) {
+            if (currentIndex >= pageLength - 1 || isAnimating) {
                 return;
             }
 
@@ -107,9 +118,10 @@
             currentPage.addClass('pt-page-scaleOutUp');
             currentPage.removeClass('top');
 
-            nextPage.addClass('current pt-page-moveInDown top');
+
+            nextPage.addClass('current pt-page-scaleInDown top');
             nextPage.bind(ANIMATION_END_EVENT, function () {
-                nextPage.removeClass('pt-page-moveInDown');
+                nextPage.removeClass('pt-page-scaleInDown');
                 nextPage.unbind(ANIMATION_END_EVENT);
 
                 currentPage.removeClass('current pt-page-scaleOutUp');
@@ -121,8 +133,7 @@
             currentIndex++;
 
             $("li:nth-child(" + (currentIndex + 1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
-
-        }
+        };
 
         window.pageDown = function () {
             if (currentIndex <= 0 || isAnimating) {
@@ -133,25 +144,25 @@
             var prevPage = $('#page-' + (currentIndex - 1));
 
             isAnimating = true;
-            currentPage.addClass('pt-page-scaleOutUp');
+            currentPage.addClass('pt-page-scaleOutDown');
             currentPage.removeClass('top');
 
-            prevPage.addClass('current pt-page-moveInUp top');
+
+            prevPage.addClass('current pt-page-scaleInUp top');
             prevPage.bind(ANIMATION_END_EVENT, function () {
-                prevPage.removeClass('pt-page-moveInUp');
+                prevPage.removeClass('pt-page-scaleInUp');
                 prevPage.unbind(ANIMATION_END_EVENT);
 
-                currentPage.removeClass('current pt-page-scaleOutUp');
+                currentPage.removeClass('current pt-page-scaleOutDown');
                 currentPage.unbind(ANIMATION_END_EVENT);
 
                 isAnimating = false;
             });
 
+
             currentIndex--;
-
             $("li:nth-child(" + (currentIndex + 1) + ")").addClass("dot-current").siblings().removeClass("dot-current");
-        }
-
+        };
 
         container.on('swipeup', pageUp);
         container.on('swipedown', pageDown);

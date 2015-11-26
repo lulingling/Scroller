@@ -2,16 +2,6 @@ body {
     overflow: hidden;
 }
 
-#debug_console {
-    width: 100%;
-    height: 100px;
-    background-color: #00aa00;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-}
-
 .container {
     position: relative;
 }
@@ -88,7 +78,7 @@ button {
     color: #ba788a;
     border-radius: 6px;
     border: 1px solid #ba788a;
-    font-size: 1.7em;;
+    font-size: 3.5em;;
     -webkit-box-shadow: gray 0 0 10px;
     box-shadow: gray 0 0 10px;
     opacity: 1;
@@ -99,8 +89,8 @@ button {
     position: absolute;
     z-index: 10000;
     top: 49%;
-    width: 0.7em;
-    right: .4em;
+    width: 2em;
+    right: 0.8em;
     overflow: hidden;
 }
 
@@ -108,13 +98,13 @@ button {
     list-style: none;
     padding: 0;
     background-color: #f9f9f9;
-    width: .5em;
-    height: .5em;
-    -webkit-border-radius: .5em;
-    -moz-border-radius: .5em;
-    border-radius: .5em;
+    width: 1em;
+    height: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
     opacity: .3;
-    margin: 0 auto .3em;
+    margin: 0 auto 1em;
 }
 
 .progress-dot.dot-current {
