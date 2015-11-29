@@ -1,6 +1,5 @@
 @import "reset";
 
-
 body {
   overflow: hidden;
 }
@@ -17,7 +16,7 @@ button {
   color: #ba788a;
   border-radius: 6px;
   border: 1px solid #ba788a;
-  font-size: 1.7em;;
+  //  font-size: 1.7em;
   -webkit-box-shadow: gray 0 0 10px;
   box-shadow: gray 0 0 10px;
   opacity: 1;
@@ -35,6 +34,11 @@ button {
   position: absolute;
   top: 0;
   left: 0;
+
+  // 背景图片填充 div
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
 }
 
 .top {

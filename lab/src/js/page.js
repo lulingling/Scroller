@@ -49,13 +49,13 @@ function pageUp() {
     var currentPage = $('#page-' + currentIndex);
     var nextPage = $('#page-' + (currentIndex + 1));
 
-    currentPage.addClass('pt-page-scaleOutUp');
+    currentPage.addClass('page-scale-out');
     currentPage.removeClass('top');
 
-    nextPage.addClass('current pt-page-scaleInDown top');
+    nextPage.addClass('current page-move-in-down top');
     nextPage.bind(ANIMATION_END_EVENT, function () {
-        currentPage.removeClass('current pt-page-scaleOutUp');
-        nextPage.removeClass('pt-page-scaleInDown');
+        currentPage.removeClass('current page-scale-out');
+        nextPage.removeClass('page-move-in-down');
         nextPage.unbind(ANIMATION_END_EVENT);
 
         isAnimating = false;
@@ -74,13 +74,13 @@ function pageDown() {
     var currentPage = $('#page-' + currentIndex);
     var prevPage = $('#page-' + (currentIndex - 1));
 
-    currentPage.addClass('pt-page-scaleOutDown');
+    currentPage.addClass('page-scale-out');
     currentPage.removeClass('top');
 
-    prevPage.addClass('current pt-page-scaleInUp top');
+    prevPage.addClass('current page-move-in-up top');
     prevPage.bind(ANIMATION_END_EVENT, function () {
-        currentPage.removeClass('current pt-page-scaleOutDown');
-        prevPage.removeClass('pt-page-scaleInUp');
+        currentPage.removeClass('current page-scale-out');
+        prevPage.removeClass('page-move-in-up');
         prevPage.unbind(ANIMATION_END_EVENT);
 
         isAnimating = false;

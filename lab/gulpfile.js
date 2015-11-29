@@ -26,7 +26,7 @@ gulp.task('js', function () {
     browserify(paths.app_entry)
         .bundle()
         .pipe(source('bundle.js'))
-        //.pipe(streamify(uglify()))
+        .pipe(streamify(uglify()))
         .pipe(gulp.dest('build/js/'));
 });
 
