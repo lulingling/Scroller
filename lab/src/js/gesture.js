@@ -33,8 +33,7 @@ $.event.special.swipeupdown = {
             $this.bind(touchMoveEvent, moveHandler).one(touchStopEvent, function (event) {
                 $this.unbind(touchMoveEvent, moveHandler);
                 if (start && stop) {
-                    if (Math.abs(start.coords[1] - stop.coords[1]) > 30 &&
-                        Math.abs(start.coords[0] - stop.coords[0]) < 75) {
+                    if (Math.abs(start.coords[1] - stop.coords[1]) > 30) {
                         start.origin.trigger("swipeupdown").trigger(start.coords[1] > stop.coords[1] ? "swipeup" : "swipedown");
                     }
                 }
