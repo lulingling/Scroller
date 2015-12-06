@@ -35,6 +35,11 @@ function init(config) {
                     left: (leftRatio <= -100 ? (100 - wRatio) / 2 : leftRatio) + "%"
                 });
             }
+
+            if (i != pageCount - 1) {
+                var sliderHint = $('<div class="slider-hint"><img src="image/arrow.png" style="position: relative; margin : 0 auto;"> </div>');
+                page.append(sliderHint);
+            }
         }
     }
 

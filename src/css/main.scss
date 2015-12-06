@@ -23,8 +23,14 @@ button {
   font-family: sans-serif;
 }
 
-.container {
+#container {
   position: relative;
+}
+
+.slider-hint {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 }
 
 .page {

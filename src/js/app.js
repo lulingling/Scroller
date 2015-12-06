@@ -13,9 +13,15 @@ var init = function () {
     // 禁止所有图片的拖拽
     $('img').on('dragstart', function () {
         return false;
-    })
+    });
 
     page.init(config);
+
+    // vertical center the slide progress
+    var sliderProgress = $("#slide-progress");
+    sliderProgress.css({
+        'margin-top': -1 * sliderProgress.height() / 2
+    });
 
     container.on('swipeup', page.pageUp);
     container.on('swipedown', page.pageDown);
